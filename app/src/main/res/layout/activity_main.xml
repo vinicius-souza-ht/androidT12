@@ -10,10 +10,49 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.com.fabricadeprogramador.fdpapp1.MainActivity">
 
-    <Button
+
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bt_OK"
-        android:text="OK"/>
+        android:inputType="numberDecimal"
+        android:id="@+id/ed1"/>
+    s
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/ed1"
+        android:id="@+id/ed2"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ed2"
+        android:id="@+id/bt_soma"
+        android:text="@string/soma"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ed2"
+        android:layout_toRightOf="@id/bt_soma"
+        android:id="@+id/bt_sub"
+        android:text="@string/subtracao"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ed2"
+        android:layout_toRightOf="@id/bt_sub"
+        android:id="@+id/bt_mul"
+        android:text="@string/multiplicacao"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ed2"
+        android:layout_toRightOf="@id/bt_mul"
+        android:id="@+id/bt_div"
+        android:text="@string/divisao"/>
 
 </RelativeLayout>

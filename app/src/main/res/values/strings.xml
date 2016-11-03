@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FDPApp1</string>
+    <string name="ok">OK</string>
+    <string name="soma">+</string>
+    <string name="subtracao">-</string>
+    <string name="divisao">/</string>
+    <string name="multiplicacao">*</string>
+    <string name="resultado">Resultado</string>
+    <string name="fechar">Fechar</string>
 </resources>
