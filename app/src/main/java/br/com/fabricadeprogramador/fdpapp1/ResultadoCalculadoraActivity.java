@@ -4,18 +4,40 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by viniciuspodi on 01/11/16.
  */
 
-public class ResultadoActivity extends Activity {
+public class ResultadoCalculadoraActivity extends Activity {
 
-    private static final String TAG = "ResultadoActivity";
+    private static final String TAG = "ResultadoCalculadoraActivity";
+
+    @OnClick(R.id.bt_fechar)
+    public void fechar(){
+        finish();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "CHAMOU ON CREATE");
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.resultado_calculadora_activity);
+
+        ButterKnife.bind(this);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        Double resultado = bundle.getDouble("resultado_calculadora_activity");
+
+        TextView tvResultado = (TextView) findViewById(R.id.tv_resultado);
+        tvResultado.setText(resultado.toString());
+
+    }
 
     @Override
     protected void onStart() {
@@ -51,30 +73,5 @@ public class ResultadoActivity extends Activity {
     protected void onDestroy() {
         Log.i(TAG,"CHAMOU ON DESTROY");
         super.onDestroy();
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "CHAMOU ON CREATE");
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.resultado);
-
-        Button btFechar = (Button) findViewById(R.id.bt_fechar);
-
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        Double resultado = bundle.getDouble("resultado");
-
-        TextView tvResultado = (TextView) findViewById(R.id.tv_resultado);
-        tvResultado.setText(resultado.toString());
-
-        btFechar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
-
     }
 }

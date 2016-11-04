@@ -7,4 +7,13 @@
     <string name="multiplicacao">*</string>
     <string name="resultado">Resultado</string>
     <string name="fechar">Fechar</string>
+    <string name="calculadora">Calculadora</string>
+    <string name="conversor">Conversor</string>
+    <string name="menu">MENU</string>
+    <string name="valor_em_metros">Valor em metros:</string>
+    <string name="valor_convertido">Valor convertido:</string>
+    <string name="km">Km</string>
+    <string name="cm">Cm</string>
+    <string name="milha">Milha</string>
+    <string name="pol">Pol</string>
 </resources>
