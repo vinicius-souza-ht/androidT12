@@ -33,4 +33,10 @@ public class MenuActivity extends Activity {
         Intent irParaConversor = new Intent(MenuActivity.this, ConversorActivity.class);
         startActivity(irParaConversor);
     }
+
+    @OnClick(R.id.bt_menu_agenda)
+    public void irAgenda(){
+        Intent irParaAgenda = new Intent(MenuActivity.this, AgendaActivity.class);
+        startActivity(irParaAgenda);
+    }
 }

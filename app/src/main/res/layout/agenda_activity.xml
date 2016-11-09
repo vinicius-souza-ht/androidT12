@@ -6,26 +6,22 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/menu"/>
+        android:text="@string/nome"/>
 
-    <Button
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bt_menu_calculadora"
-        android:text="@string/calculadora"/>
+        android:id="@+id/ed_agenda_nome"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bt_menu_conversor"
-        android:text="@string/conversor"
-        />
+        android:id="@+id/bt_agenda_salvar"
+        android:text="@string/salvar"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bt_menu_agenda"
-        android:text="@string/agenda"
-        />
-
+        android:id="@+id/bt_agenda_fechar"
+        android:text="@string/fechar"/>
 </LinearLayout>

@@ -28,7 +28,7 @@ public class ConversorActivity extends Activity {
 
     @OnClick(R.id.bt_km)
     public void converterMParaKm(){
-        Double valorMetro = Double.parseDouble(edMetro.getText().toString());
+        Double valorMetro = Double.parseDouble(edMetro.getText() .toString());
         Intent irParaResultadoConversao = new Intent(ConversorActivity.this, ResultadoConversaoActivity.class);
         Bundle bundle = new Bundle();
         bundle.putDouble("valorMetro",valorMetro);

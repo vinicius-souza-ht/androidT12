@@ -16,4 +16,7 @@
     <string name="cm">Cm</string>
     <string name="milha">Milha</string>
     <string name="pol">Pol</string>
+    <string name="nome">Nome :</string>
+    <string name="salvar">Salvar</string>
+    <string name="agenda">Agenda</string>
 </resources>
