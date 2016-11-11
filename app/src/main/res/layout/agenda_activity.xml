@@ -13,6 +13,26 @@
         android:layout_height="wrap_content"
         android:id="@+id/ed_agenda_nome"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/telefone"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_agenda_telefone"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_agenda_email"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

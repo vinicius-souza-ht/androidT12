@@ -33,11 +33,13 @@ public class ListaAgendaActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        String nome = intent.getStringExtra("nome");
+        Pessoa pessoa = (Pessoa) intent.getSerializableExtra("pessoa");
+        pessoa.setImagem(R.drawable.imagem1);
+        GerenciadorAgenda.adicionar(pessoa);
 
-        GerenciadorAgenda.adicionar(nome);
+        PessoaListAdapter adapter = new PessoaListAdapter(this, GerenciadorAgenda.getPessoasList());
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,  android.R.layout.simple_list_item_1, GerenciadorAgenda.getNomes());
+        //ArrayAdapter<Pessoa> adapter = new ArrayAdapter<>(this,  android.R.layout.simple_list_item_1, GerenciadorAgenda.getPessoasList());
 
         listaAgenda.setAdapter(adapter);
 

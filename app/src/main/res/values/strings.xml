@@ -19,4 +19,6 @@
     <string name="nome">Nome :</string>
     <string name="salvar">Salvar</string>
     <string name="agenda">Agenda</string>
+    <string name="telefone">Telefone :</string>
+    <string name="email">E-mail :</string>
 </resources>
