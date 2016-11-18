@@ -42,7 +42,7 @@ public class PessoaListAdapter extends ArrayAdapter<Pessoa> {
         Pessoa pessoa = getItem(position);
         if(pessoa != null) {
             holder.nomeItemLista.setText(pessoa.getNome());
-            holder.imagem.setImageResource(pessoa.getImagem());
+//            holder.imagem.setImageResource(pessoa.getImagem());
             holder.telefoneItemLista.setText(pessoa.getTelefone());
             holder.emailItemLista.setText(pessoa.getEmail());
         }
