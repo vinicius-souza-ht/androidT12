@@ -17,13 +17,20 @@ public class Pessoa implements Serializable{
     public Pessoa() {
     }
 
-    public Pessoa(String nome, String telefone, String email, Integer imagem) {
+    public Pessoa(Long id, String nome, String telefone, String email, Integer imagem) {
+        this.id = id;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
         this.imagem = imagem;
     }
 
+    public Pessoa(String nome, String telefone, String email, Integer imagem) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+        this.imagem = imagem;
+    }
     public Long getId() {
         return id;
     }

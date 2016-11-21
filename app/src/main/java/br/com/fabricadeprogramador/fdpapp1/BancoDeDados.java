@@ -16,7 +16,7 @@ import java.util.List;
 public class BancoDeDados extends SQLiteOpenHelper {
 
     public static final String NOME_BANCO = "fdpdb";
-    public static final int VERSAO_BANCO = 1;
+    public static final int VERSAO_BANCO = 2;
 
     public BancoDeDados(Context context) {
         super(context, NOME_BANCO, null, VERSAO_BANCO);

@@ -16,6 +16,9 @@ import butterknife.OnClick;
 
 public class AgendaActivity extends AppCompatActivity {
 
+    @Bind(R.id.ed_agenda_id)
+    EditText edId;
+
     @Bind(R.id.ed_agenda_nome)
     EditText edNome;
 
@@ -35,7 +38,11 @@ public class AgendaActivity extends AppCompatActivity {
     @OnClick(R.id.bt_agenda_salvar)
     public void salvar(){
         Intent intent = new Intent(AgendaActivity.this, ListaAgendaActivity.class);
-        intent.putExtra("pessoa", new Pessoa(edNome.getText().toString(), edTelefone.getText().toString(), edEmail.getText().toString(),0));
+        if(edId.getText().toString().isEmpty()){
+            intent.putExtra("pessoa", new Pessoa(edNome.getText().toString(), edTelefone.getText().toString(), edEmail.getText().toString(),0));
+        } else {
+            intent.putExtra("pessoa", new Pessoa(new Long(edId.getText().toString()), edNome.getText().toString(), edTelefone.getText().toString(), edEmail.getText().toString(), 0));
+        }
         startActivity(intent);
     }
 
