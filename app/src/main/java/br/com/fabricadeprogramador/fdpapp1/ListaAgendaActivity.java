@@ -33,20 +33,48 @@ public class ListaAgendaActivity extends AppCompatActivity {
         setContentView(R.layout.lista_agenda_activity);
         ButterKnife.bind(this);
 
-        Intent intent = getIntent();
-        Pessoa pessoa = (Pessoa) intent.getSerializableExtra("pessoa");
-        pessoa.setImagem(R.drawable.imagem1);
-//        GerenciadorAgenda.adicionar(pessoa);
+//        atualiza();
 
+        listaAgenda.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Pessoa pessoaSel = (Pessoa) adapterView.getItemAtPosition(i);
+                Intent irParaCadastro = new Intent(ListaAgendaActivity.this, AgendaActivity.class);
+                irParaCadastro.putExtra("pessoaSel", pessoaSel);
+                startActivity(irParaCadastro);
+            }
+        });
+
+        listaAgenda.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Pessoa pessoaSel = (Pessoa) adapterView.getItemAtPosition(i);
+                BancoDeDados bancoDeDados = new BancoDeDados(ListaAgendaActivity.this);
+                bancoDeDados.excluir(pessoaSel);
+                atualiza();
+
+                return true;
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        atualiza();
+    }
+
+    public void atualiza(){
         BancoDeDados banco = new BancoDeDados(this);
-        banco.salvar(pessoa);
-
         PessoaListAdapter adapter = new PessoaListAdapter(this, banco.buscarTodos());
-
-        //ArrayAdapter<Pessoa> adapter = new ArrayAdapter<>(this,  android.R.layout.simple_list_item_1, GerenciadorAgenda.getPessoasList());
-
         listaAgenda.setAdapter(adapter);
+    }
 
+    @OnClick(R.id.bt_lista_novo)
+    public void novo(){
+        Intent irParaForm = new Intent(ListaAgendaActivity.this, AgendaActivity.class);
+        startActivity(irParaForm);
     }
 
     @OnClick(R.id.bt_lista_fechar)

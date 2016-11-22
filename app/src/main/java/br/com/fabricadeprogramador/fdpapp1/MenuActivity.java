@@ -35,8 +35,8 @@ public class MenuActivity extends Activity {
     }
 
     @OnClick(R.id.bt_menu_agenda)
-    public void irAgenda(){
-        Intent irParaAgenda = new Intent(MenuActivity.this, AgendaActivity.class);
-        startActivity(irParaAgenda);
+    public void irListaAgenda(){
+        Intent irParaLista = new Intent(MenuActivity.this, ListaAgendaActivity.class);
+        startActivity(irParaLista);
     }
 }
